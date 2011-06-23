@@ -1,0 +1,22 @@
+<% title "Picture", @picture.name %>
+
+<%= image_tag @picture.image.url(:thumb) %>
+<%= @picture.name %>
+
+<p>
+  <%=h @picture.description.html_safe %>
+</p>
+<p>
+  <strong>Taken:</strong>
+  <%= @picture.date_taken.to_s(:pretty) %>
+</p>
+<p>
+	<strong>Taken By:</strong>
+	<%=h @picture.photographer%>
+</p>
+
+<div class="actions">
+  <%= link_to "Edit", edit_picture_path(@picture) %> |
+  <%= link_to "Destroy", @picture, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", pictures_path %>
+</div>

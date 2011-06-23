@@ -1,0 +1,48 @@
+<% title "Pictures" %>
+
+<%= form_tag search_pictures_path, :method => :get do %>
+  <div class= "search">
+    <%= text_field_tag :q, params[:q] %>
+    <%= submit_tag "Search", :name => "search" %>
+    <%= submit_tag "Clear", :name => "clear" %>
+  </div>
+<% end %>
+
+<div id="picture_list">
+	<% if @tree_id %>
+		<%= form_tag selected_trees_pictures_path do  %>
+			<% for picture in @pictures -%>
+				<div class="picture">
+					<%=h picture.name %>
+					<%= link_to image_tag(picture.image.url(:thumb), :alt => "show #{picture.name}", :border => 0), 
+															:action => 'show', :id => picture %>
+					<% if picture.assignedrefs.where(:ref => @tree_id).exists? %>
+						Already Selected
+					<% else %>
+						<%= check_box_tag "add_to[]", picture.id %>
+					<% end %>
+				</div>
+			<% end %>
+			</table>
+			<%= hidden_field_tag "selected_tree", @tree_id %>
+			<%= submit_tag "Assign", :name => nil %>
+		<% end %>
+	<% else %>
+		<% for picture in @pictures -%>
+			<div class="picture">
+				<%=h picture.name %>
+				<%= link_to image_tag(picture.image.url(:thumb), :alt => "show #{picture.name}", :border => 0), 
+																:action => 'show', :id => picture %>
+				<div class="actions">
+					<%= link_to "Show", picture, :class => "stdbutton2" %>
+					<%= link_to "edit", edit_picture_path(picture) %>
+					<%= link_to "delete", picture, :confirm => 'Are you sure?', :method => :delete%>
+				</div>
+			</div>
+		<% end %>
+		
+	<% end %>
+</div>
+
+
+<div><%= link_to "New Picture", new_picture_path, :class => "link" %></div>

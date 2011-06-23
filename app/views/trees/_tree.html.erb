@@ -1,0 +1,22 @@
+<%= div_for tree do %>
+    <div class="title">
+    	<% pic = Picture.find_by_assigned_ref_with_id(tree, :result => :onerandom)%>
+        <% if pic %>
+    	   <%= link_to image_tag(pic.image.url(:thumb), :border => 0), 
+    										:action => 'edit', :controller => 'pictures', :id => pic %>
+        <% else %>
+            No Image
+        <% end %>
+        <%= tree.given_name %> |
+        <%= tree.kind.botanic_name %>
+    </div>
+    <div class="details">
+        <%= tree.date_planted.to_s(:tree_date) %>
+        <%= tree.location_desc %>
+    </div>
+    <div class="actions">
+        <%= link_to "Show", tree %>
+        <%= link_to "Edit", edit_tree_path(tree) %>
+        <%= link_to "Destroy", tree, :confirm => 'Are you sure?', :method => :delete, :remote => true, :class => 'delete_tree' %>
+    </div>
+<% end %>

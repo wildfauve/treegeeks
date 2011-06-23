@@ -1,0 +1,97 @@
+$main-colour: #191970;
+$head-colour: #2F4F4F;
+
+@mixin rounded-corners($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+body {
+	background: #9BCD9B;
+}
+#header {
+	
+	background: $head-colour;
+	color: white;
+}
+
+#head_search {
+	position: absolute;
+	right: 1px;
+	top: 0px;
+	width: 20em;
+	background: $head-colour;
+}
+
+nav {
+	position: absolute;
+	left: 8px;
+	top: 59px;
+	width: 10em;
+	background: #53868B;
+}
+
+
+#content {
+	margin: 0 11em;
+	background: #FFFFF2;
+}
+
+aside {
+	position: absolute;
+	right: 2em;
+	top: 59px;
+	width: 10em;
+	background: #53868B;
+}
+
+footer {
+		
+	margin: 1em 0em 0em 11em; 
+	background: #27408B;
+	color: white;
+}
+
+.search {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		width: 250px;
+		background: #15b5db;
+		border: 2px solid #ffffff
+}
+
+a { 
+	color: $main-colour;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.link {
+    background-color: $main-colour;
+    color: #FFF;
+    padding: 5px 12px;
+    margin: 10px 0;
+    font-size: 12px;
+    @include rounded-corners(5px);
+  }
+
+
+#tree_results .tree .title {font-size: 110%;}
+
+.actions {font-size: 80%;}
+
+#tree_results .tree .details {font-size: 80%; color: #555}
+
+.tree { padding-top: 20px; padding-bottom: 20px}
+
+
+#picture_list {
+			padding-top: 10px;
+			padding-bottom: 10px;
+}
+
+.picture { font-size: 90%; color: #555; padding-top: 10px;
+			padding-bottom: 10px;}
