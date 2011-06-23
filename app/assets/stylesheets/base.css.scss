@@ -1,5 +1,6 @@
 $main-colour: #191970;
 $head-colour: #2F4F4F;
+$background-colour: #9BCD9B;
 
 @mixin rounded-corners($radius) {
   border-radius: $radius;
@@ -7,48 +8,77 @@ $head-colour: #2F4F4F;
   -webkit-border-radius: $radius;
 }
 
-body {
-	background: #9BCD9B;
-}
-#header {
+#container {
+	margin: 0 auto;
+	width: 1000px;
+	color: $background-colour;
 	
+}
+
+body {
+	background: $background-colour;
+}
+
+#header {
 	background: $head-colour;
 	color: white;
+	width: 1000px;
+	height: 50px;
 }
+
+#header h1 { margin: 0;} 
 
 #head_search {
 	position: absolute;
-	right: 1px;
-	top: 0px;
-	width: 20em;
+	right: 0;
+	top: 0;
+	width: 250px;
 	background: $head-colour;
 }
 
+
 nav {
-	position: absolute;
-	left: 8px;
-	top: 59px;
-	width: 10em;
+	float: left;
+	width: 120px;
+	padding: 20px 0;
+	display: inline;
 	background: #53868B;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	margin: 0 0 1em;
+	padding: 0;
+	list-style-type: none;
 }
 
 
 #content {
-	margin: 0 11em;
+	float: left;
+	width: 650px;
+	margin: 0 auto;
 	background: #FFFFF2;
+	padding: 0 0 0 30px;
 }
 
 aside {
-	position: absolute;
-	right: 2em;
-	top: 59px;
-	width: 10em;
+	float: right;
+	width: 200px;
+	padding: 20px 0;
+	display: inline;
 	background: #53868B;
 }
 
 footer {
-		
-	margin: 1em 0em 0em 11em; 
+	clear: both;
+	text-align: right;
+	width: 100%;
+	padding: 10px;
+	heigth: 1%;	
 	background: #27408B;
 	color: white;
 }
