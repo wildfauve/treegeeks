@@ -5,6 +5,11 @@ class TreesController < ApplicationController
   
   def index
     @trees = Tree.all.page params[:page]
+
+    respond_to do |format|
+      format.html
+      format.json {render :json => @trees}
+    end
   end
 
   # GET /trees/new

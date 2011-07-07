@@ -9,43 +9,61 @@
 	<%= csrf_meta_tag %>
 </head>
   <body>
-	<div id="container">
-		
-		<div id="header">
-			<h1><%= content_for?(:header_title) ? content_for(:header_title) : 'TreeGeek' %></h1>
-			<div id="head_search">
-				<%= form_tag search_path, :method => :get, :remote => true  do %>
-				    <%= text_field_tag :q, params[:q]%>
-				    <%= submit_tag "Search", :name => nil %>
-				    <%= submit_tag "Clear", :name => "clear" %>
-				<% end %>
-		  	</div>
-		</div>	
-			<nav>
+	<div id="layout-three-fixed">
+		<div id="container">
+			<div id="banner">
 				<ul>
-					<li><%= link_to "Trees", trees_path %></li>
-					<li><%= link_to "Kinds", kinds_path %></li> 
-					<li><%= link_to "All Pictures", pictures_path %></li>
+					<li><%= render "shared/user_banner" %></li>
 				</ul>
-			</nav>
-			<div id="content">
-		  		<%- flash.each do |name, msg| -%>
-		    		<%= content_tag :div, msg, :id => "flash_#{name}" %>
-		  		<%- end -%>      
-		  		<%= yield %>
-		  		<br/>
-	    	</div>
-	    	<aside>
-				<h3>aside</h3>
-				<p>
-				text
-				text
-				text
-				texttext
-				texttext
-				text
-				</p>
-			<aside>
+			</div>
+			<div id="header">
+				logo::TreeGeek
+				<div id="header-search">
+					<%= form_tag(search_path, :method => :get, :remote => true) do %>
+					    <%= text_field_tag controller_name, params[:q] %>
+					    <%= submit_tag "Search", :name => nil %>
+					    <%= submit_tag "Clear", :name => "clear" %>
+					<% end %>
+		  	</div>
+			</div>
+			<div id="navigation">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact us</a></li>
+				</ul>
+			</div>
+			<div id="content-container">
+				<div id="section-navigation">
+					<ul>
+						<li><%= link_to "Trees", trees_path %></li>
+						<li><%= link_to "Kinds", kinds_path %></li> 
+						<li><%= link_to "All Pictures", pictures_path %></li>
+					</ul>
+				</div>
+				<div id="content">
+					<%- flash.each do |name, msg| -%>
+	    				<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	  				<% end %>      
+	  				<%= yield %>
+				</div>
+				<div id="aside">
+					<h3>aside</h3>
+						<p>
+						text
+						text
+						text
+						texttext
+						texttext
+						text</p>
+				</div>
+				<div id="footer">Copyright Dinsdale Design 1066</div>
+
+			</div>
+		</div>
 	</div>
   </body>
 </html>
+
+
+

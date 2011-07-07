@@ -1,6 +1,9 @@
 $main-colour: #191970;
-$head-colour: #2F4F4F;
-$background-colour: #9BCD9B;
+$head-colour: #556B2F;
+$background-colour: #556B2F;
+$foot-colour:  #9BCD9B;
+$main-nav-colour: #2F4F4F;
+$page-colour: #FFF8DC;
 
 @mixin rounded-corners($radius) {
   border-radius: $radius;
@@ -8,80 +11,123 @@ $background-colour: #9BCD9B;
   -webkit-border-radius: $radius;
 }
 
+
+#header logo {
+	float: left;
+	padding-top: 2px;
+}
+
+#header ul {list-style: none;}
+
+#header-search {
+	float: right;
+	background: $head-colour;
+}
+
+
 #container {
 	margin: 0 auto;
 	width: 1000px;
-	color: $background-colour;
-	
-}
-
-body {
-	background: $background-colour;
+	background: $page-colour;
 }
 
 #header {
 	background: $head-colour;
-	color: white;
-	width: 1000px;
-	height: 50px;
+	padding: 20px;
 }
 
-#header h1 { margin: 0;} 
+#header h1 { margin: 0; }
 
-#head_search {
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 250px;
-	background: $head-colour;
-}
-
-
-nav {
+#navigation {
 	float: left;
-	width: 120px;
-	padding: 20px 0;
-	display: inline;
-	background: #53868B;
+	width: 1000px;
+	background: $main-nav-colour;
 }
 
-nav ul {
+#navigation ul {
 	margin: 0;
 	padding: 0;
 }
 
-nav li {
+#navigation ul li {
+	list-style-type: none;
+	display: inline;
+}
+
+#navigation li a {
+	display: block;
+	float: left;
+	padding: 5px 10px;
+	color: #fff;
+	text-decoration: none;
+	border-right: 1px solid #fff;
+	&:hover { background: $head-colour; }
+}
+
+#content-container
+{
+	float: left;
+	width: 1000px;
+}
+
+#section-navigation {
+	float: left;
+	width: 120px;
+	padding: 20px 0;
+	display: inline;
+}
+
+#section-navigation ul {
+	margin: 0;
+	padding: 0;
+}
+
+#section-navigation ul li {
 	margin: 0 0 1em;
 	padding: 0;
 	list-style-type: none;
 }
 
+#section-navigation li a {
+	padding: 5px 40px 5px 5px;
+	color: #0;
+	text-decoration: none;
+}
+
+
+#section-navigation li a:hover { background: $head-colour; }
 
 #content {
 	float: left;
-	width: 650px;
-	margin: 0 auto;
-	background: #FFFFF2;
-	padding: 0 0 0 30px;
-}
-
-aside {
-	float: right;
-	width: 200px;
+	width: 600px;
 	padding: 20px 0;
-	display: inline;
-	background: #53868B;
+	margin: 0 0 0 30px;
+	background: $page-colour
 }
 
-footer {
-	clear: both;
-	text-align: right;
-	width: 100%;
-	padding: 10px;
-	heigth: 1%;	
-	background: #27408B;
-	color: white;
+#content h2 { margin: 0; }
+
+#aside {
+	float: right;
+	width: 180px;
+	padding: 20px 0;
+	margin: 0 20px 0 0;
+	display: inline;
 }
+
+#aside h3 { 
+	margin: 0;
+}
+
+#footer {
+	clear: left;
+	background: $foot-colour;
+	text-align: right;
+	padding: 20px;
+	font-size: 12px;
+	height: 1%;
+}
+
 
 .search {
 		padding-top: 10px;

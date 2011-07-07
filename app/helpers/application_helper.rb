@@ -3,5 +3,4 @@ module ApplicationHelper
 	    content_for(:title, page_title.to_s + "-" + sup_title)
 	    content_for(:header_title, page_title.to_s)
 	end
-
 end
