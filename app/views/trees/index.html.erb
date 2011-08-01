@@ -1,12 +1,5 @@
 <% title "Trees" %>
 
-<%= form_tag search_trees_path, :method => :get, :remote => true  do %>
-  <div class="search">
-    <%= text_field_tag :q, params[:q]%>
-    <%= submit_tag "Search", :name => nil %>
-    <%= submit_tag "Clear", :name => "clear" %>
-  </div>
-<% end %>
 
 <div id="tree_results">
 

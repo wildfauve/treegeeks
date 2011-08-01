@@ -1,0 +1,4 @@
+$('#aside').hide();
+$('#aside').append("<%= escape_javascript(render(:partial => 'trees')) %>");
+$("#hsearch")[0].reset();
+$('#aside').slideDown('slow');

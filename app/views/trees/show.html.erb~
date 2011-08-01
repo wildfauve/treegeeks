@@ -21,7 +21,6 @@
 <p>
   <strong>Date Planted</strong>
   <%= @tree.date_planted.to_s(:month_and_year)%>
-  <%= @tree.date_planted.try(:to_s, :month_and_year)%>
 </p>
 
 <p>

@@ -165,7 +165,7 @@ a.test { font-weight: bold; }
 
 #tree_results .tree .details {font-size: 80%; color: #555}
 
-.tree { padding-top: 20px; padding-bottom: 20px}
+.tree { background-color: $main-colour; padding-top: 20px; padding-bottom: 20px}
 
 
 #picture_list {

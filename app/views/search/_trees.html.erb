@@ -1,0 +1,8 @@
+<% for tree in @trees %>
+	<p>
+		<%= tree.given_name %> |
+		<%= tree.kind.botanic_name %> |
+		<%= tree.date_planted.to_s(:tree_date) %> |
+		<%= tree.location_desc %>
+	</p>
+<% end %>

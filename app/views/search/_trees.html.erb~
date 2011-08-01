@@ -1,0 +1,6 @@
+<% for tree in @trees %>
+	<p>
+		<%= tree.given_name %> |
+		
+	</p>
+<% end %>

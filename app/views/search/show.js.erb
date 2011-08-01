@@ -1,5 +1,5 @@
-<% ht = "" %>
-<% for tree in @trees do %>
-		<% ht += "#{tree.kind.family} #{tree.given_name}" %>
-<% end %>
-$('#aside').html("<%= ht %>");
+$('#aside').hide();
+
+$('#aside').html("<%= escape_javascript(render(:partial => 'trees')) %>");
+$("#hsearch")[0].reset();
+$('#aside').slideDown('slow');

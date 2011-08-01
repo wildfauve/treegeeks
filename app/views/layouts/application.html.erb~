@@ -19,8 +19,11 @@
 			<div id="header">
 				logo::TreeGeek
 				<div id="header-search">
-					<%= render "shared/header_search" %>
-				</div>
+					<%= form_tag(search_path, :id => "hsearch", :method => :get, :remote => true) do %>
+					    <%= text_field_tag controller_name, params[:q] %>
+					    <%= submit_tag "Search", :name => nil %>
+					 <% end %>
+		  		</div>
 			</div>
 			<div id="navigation">
 				<ul>

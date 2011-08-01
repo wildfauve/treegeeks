@@ -1,0 +1,4 @@
+<%= form_tag(search_path, :id => "hsearch", :method => :get, :remote => true) do %>
+	 <%= text_field_tag controller_name, params[:q] %>
+	 <%= submit_tag "Search", :name => nil %>
+<% end %>

@@ -1,0 +1,3 @@
+Dinsdale_The_User_The_Dinsdale
+<% user_opts = ["login", "logout"] %>
+<%= select_tag "user", "<option>1</option>" %>
